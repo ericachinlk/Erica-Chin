@@ -1,0 +1,369 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Helvetica, sans-serif;
+    background: #FFFAFA;
+    color: #111;
+    line-height: 1.5;
+}
+
+
+/* NAVIGATION BAR */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    background: rgba(244, 243, 239, 0.85);
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    color: #111;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: #111;
+    text-decoration: none;
+    font-size: 14px;
+    transition: opacity 0.3s ease;
+}
+
+nav a:hover {
+    opacity: 0.5;
+}
+
+
+section {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+/* ABOUT */
+
+.hero {
+    min-height: 100vh;
+    padding-top: 150px;
+    padding-bottom: 100px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    align-items: center;
+    gap: 80px;
+}
+
+.small-title {
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.hero h1 {
+    font-size: clamp(70px, 12vw, 170px);
+    font-weight: 400;
+    line-height: 0.85;
+    letter-spacing: -7px;
+}
+
+.hero h2 {
+    margin-top: 40px;
+    font-size: 28px;
+    font-weight: 400;
+}
+
+.introduction {
+    max-width: 450px;
+    margin-top: 25px;
+    font-size: 18px;
+    color: #555;
+}
+
+.profile-photo {
+    width: 100%;
+    max-width: 500px;
+    justify-self: end;
+}
+
+.profile-photo img {
+    width: 100%;
+    display: block;
+}
+
+/* EXPERIENCE */
+
+.experience {
+    padding-top: 150px;
+    padding-bottom: 150px;
+    background: #111;
+    color: white;
+}
+
+.section-title h2 {
+    font-size: clamp(60px, 9vw, 130px);
+    font-weight: 400;
+    line-height: 0.9;
+    letter-spacing: -5px;
+    margin-bottom: 120px;
+}
+
+.experience-list {
+    max-width: 1100px;
+    margin-left: auto;
+}
+
+.experience-item {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 50px;
+    padding: 50px 0;
+    border-top: 1px solid #444;
+}
+
+.experience-date {
+    color: #999;
+    font-size: 14px;
+}
+
+.experience-item h3 {
+    font-size: 32px;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.company {
+    color: #999;
+    margin-bottom: 20px;
+}
+
+.experience-item p {
+    max-width: 600px;
+    color: #ccc;
+}
+
+.experience-description {
+    max-width: 700px;
+}
+
+.experience-summary {
+    color: #ccc;
+    font-size: 17px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.achievement-list {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.achievement-list li {
+    color: #aaa;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 14px;
+    padding-left: 8px;
+}
+
+.achievement-list li::marker {
+    color: #666;
+}
+
+.achievement-list strong {
+    color: white;
+    font-weight: 500;
+}
+
+/* SKILLS */
+
+.skills {
+    margin-top: 150px;
+    border-top: 1px solid #444;
+    padding-top: 50px;
+}
+
+.skill-groups {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px 60px;
+    margin-top: 60px;
+}
+
+.skill-group h3 {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-list span {
+    border: 1px solid #555;
+    padding: 10px 16px;
+    border-radius: 50px;
+    font-size: 13px;
+    color: #ccc;
+}
+
+.skill-list span:hover {
+    background: white;
+    color: #111;
+}
+
+
+/* CONTACT */
+
+.contact {
+    min-height: 100vh;
+    padding-top: 150px;
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact h2 {
+    font-size: clamp(80px, 15vw, 200px);
+    font-weight: 400;
+    line-height: 0.8;
+    letter-spacing: -8px;
+    margin-bottom: 50px;
+}
+
+.contact > p {
+    max-width: 450px;
+    font-size: 18px;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 50px;
+}
+
+.contact-links a {
+    color: #111;
+    text-decoration: none;
+    font-size: 32px;
+    border-bottom: 1px solid #111;
+    margin-bottom: 15px;
+    transition: opacity 0.3s ease;
+}
+
+.contact-links a:hover {
+    opacity: 0.4;
+}
+
+/* COPYRIGHT */
+
+.copyright {
+    margin-top: 120px;
+    font-size: 12px !important;
+    color: #777;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+    .navbar {
+        padding: 20px;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    section {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 130px;
+        gap: 50px;
+    }
+
+    .hero h1 {
+        font-size: 80px;
+        letter-spacing: -4px;
+    }
+
+    .profile-photo {
+        max-width: 100%;
+    }
+
+    .experience {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    .section-title h2 {
+        margin-bottom: 70px;
+        letter-spacing: -3px;
+    }
+
+    .experience-item {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .experience-item h3 {
+        font-size: 26px;
+    }
+
+    .skills {
+        margin-top: 100px;
+    }
+
+    .contact {
+        padding-top: 100px;
+    }
+
+    .contact h2 {
+        font-size: 100px;
+        letter-spacing: -5px;
+    }
+
+    .contact-links a {
+        font-size: 26px;
+    }
+
+    .skill-groups {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+}
