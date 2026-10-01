@@ -42,13 +42,13 @@ body {
 
 nav {
     display: flex;
-    gap: 30px;
+    gap: 24px;
 }
 
 nav a {
     color: #111;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 13px;
     transition: opacity 0.3s ease;
 }
 
@@ -56,11 +56,11 @@ nav a:hover {
     opacity: 0.5;
 }
 
-
 section {
     padding-left: 40px;
     padding-right: 40px;
 }
+
 
 /* ABOUT */
 
@@ -95,7 +95,7 @@ section {
 }
 
 .introduction {
-    max-width: 450px;
+    max-width: 500px;
     margin-top: 25px;
     font-size: 18px;
     color: #555;
@@ -112,7 +112,8 @@ section {
     display: block;
 }
 
-/* EXPERIENCE */
+
+/* DARK SECTIONS */
 
 .experience {
     padding-top: 150px;
@@ -129,12 +130,16 @@ section {
     margin-bottom: 120px;
 }
 
+.project-list,
 .experience-list {
     max-width: 1100px;
     margin-left: auto;
 }
 
-.experience-item {
+
+/* PROJECTS */
+
+.project-item {
     display: grid;
     grid-template-columns: 200px 1fr;
     gap: 50px;
@@ -142,12 +147,15 @@ section {
     border-top: 1px solid #444;
 }
 
-.experience-date {
+.project-type {
     color: #999;
     font-size: 14px;
+    letter-spacing: 1px;
 }
 
-.experience-item h3 {
+.project-item h3,
+.experience-item h3,
+.education-item h3 {
     font-size: 32px;
     font-weight: 400;
     margin-bottom: 5px;
@@ -158,20 +166,13 @@ section {
     margin-bottom: 20px;
 }
 
-.experience-item p {
-    max-width: 600px;
-    color: #ccc;
-}
-
-.experience-description {
+.experience-summary,
+.education-description {
     max-width: 700px;
-}
-
-.experience-summary {
     color: #ccc;
     font-size: 17px;
     line-height: 1.6;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .achievement-list {
@@ -180,6 +181,7 @@ section {
 }
 
 .achievement-list li {
+    max-width: 700px;
     color: #aaa;
     font-size: 15px;
     line-height: 1.6;
@@ -196,7 +198,8 @@ section {
     font-weight: 500;
 }
 
-/* SKILLS */
+
+/* TECHNICAL SKILLS */
 
 .skills {
     margin-top: 150px;
@@ -234,6 +237,65 @@ section {
 .skill-list span:hover {
     background: white;
     color: #111;
+}
+
+
+/* EXPERIENCE */
+
+.experience-secondary {
+    padding-top: 150px;
+}
+
+.experience-item {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 50px;
+    padding: 50px 0;
+    border-top: 1px solid #444;
+}
+
+.experience-date {
+    color: #999;
+    font-size: 14px;
+}
+
+
+/* EDUCATION */
+
+.education {
+    padding-top: 150px;
+    padding-bottom: 150px;
+    background: #FFFAFA;
+    color: #111;
+}
+
+.education .small-title {
+    color: #666;
+}
+
+.education-list {
+    max-width: 1100px;
+    margin-left: auto;
+}
+
+.education-item {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 50px;
+    padding: 50px 0;
+    border-top: 1px solid #ddd;
+}
+
+.education-item h3 {
+    color: #111;
+}
+
+.education .company {
+    color: #666;
+}
+
+.education-description {
+    color: #555;
 }
 
 
@@ -281,6 +343,7 @@ section {
     opacity: 0.4;
 }
 
+
 /* COPYRIGHT */
 
 .copyright {
@@ -298,11 +361,13 @@ section {
     }
 
     nav {
-        gap: 15px;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
     }
 
     nav a {
-        font-size: 12px;
+        font-size: 11px;
     }
 
     section {
@@ -325,7 +390,8 @@ section {
         max-width: 100%;
     }
 
-    .experience {
+    .experience,
+    .education {
         padding-top: 100px;
         padding-bottom: 100px;
     }
@@ -335,12 +401,16 @@ section {
         letter-spacing: -3px;
     }
 
-    .experience-item {
+    .project-item,
+    .experience-item,
+    .education-item {
         grid-template-columns: 1fr;
         gap: 15px;
     }
 
-    .experience-item h3 {
+    .project-item h3,
+    .experience-item h3,
+    .education-item h3 {
         font-size: 26px;
     }
 
@@ -365,5 +435,4 @@ section {
         grid-template-columns: 1fr;
         gap: 50px;
     }
-
 }
