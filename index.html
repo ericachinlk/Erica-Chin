@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Erica — Resume</title>
+    <title>Erica Chin | Software Engineering Student</title>
+    <meta name="description" content="Erica Chin, software engineering student at 42 Kuala Lumpur. Python and C projects in LLM function calling, multithreading and algorithms.">
     <link rel="stylesheet" href="echin.css">
 </head>
 
@@ -17,7 +18,6 @@
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
             <a href="#experience">Experience</a>
-            <a href="#education">Education</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
@@ -29,20 +29,19 @@
 
             <h1>Erica<br>Chin.</h1>
 
-            <h2>
-                Software Engineer
-                <br>AI &amp; LLM Development
-            </h2>
+            <h2>Software Engineering Student</h2>
 
             <p class="introduction">
-                A software engineering student with hands-on experience in algorithm design,
-                AI systems, and Python/C development. Combining 10+ years of analytical
-                problem-solving with a passion for efficient design.
+                At 42 Kuala Lumpur, I build Python and C projects, including a local
+                LLM function-calling pipeline and a multithreaded scheduler. I bring 10+
+                years of marketing and data-insight work.
             </p>
+
+            <a class="btn" href="Erica_Chin_Resume_2026.pdf" download>Download resume (PDF)</a>
         </div>
 
         <div class="profile-photo">
-            <img src="https://cdn.intra.42.fr/users/6687241d951370a0618786d698810287/echin.JPG" alt="Erica Chin">
+            <img src="echin.jpeg" alt="Erica Chin">
         </div>
     </section>
 
@@ -57,80 +56,43 @@
             </h2>
         </div>
 
-        <div class="project-list">
+        <div class="project-viewer" id="project-viewer">
+            <div class="project-tabs" role="tablist" aria-label="Projects">
+                <button role="tab" id="tab-1" aria-controls="panel-1" aria-selected="true">call me maybe</button>
+                <button role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false">Codexion</button>
+                <button role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false">A-Maze-ing</button>
+            </div>
+            <p class="tab-hint">Use the left and right arrow keys to switch projects.</p>
 
-            <article class="project-item">
-                <div class="project-type">AI / LLM</div>
-
-                <div>
-                    <h3>call me maybe</h3>
-
-                    <p class="company">
-                        LLM Function-Calling System · Python, Qwen3-0.6B, Pydantic
-                    </p>
-
-                    <ul class="achievement-list">
-                        <li>
-                            Built a local LLM function-calling framework converting
-                            prompts into validated JSON.
-                        </li>
-
-                        <li>
-                            Implemented logit masking and schema constraints to achieve
-                            <strong>~99% test accuracy</strong>.
-                        </li>
-                    </ul>
-                </div>
+            <article class="project-panel" role="tabpanel" id="panel-1" aria-labelledby="tab-1">
+                <h3>call me maybe</h3>
+                <p class="company">LLM Function-Calling System · Python, Qwen3-0.6B, Pydantic</p>
+                <ul class="achievement-list">
+                    <li>Built a local LLM function-calling pipeline that converts natural-language prompts into validated JSON function calls.</li>
+                    <li>Implemented token-level logit masking and Pydantic schema validation; reached <strong>about 99% accuracy</strong> on the project test set (11 prompts across 5 function types).</li>
+                </ul>
+                <a class="repo-link" href="https://github.com/ericachinlk/42-call-me-maybe" target="_blank" rel="noopener">View on GitHub</a>
             </article>
 
-            <article class="project-item">
-                <div class="project-type">PYTHON</div>
-
-                <div>
-                    <h3>A-Maze-ing</h3>
-
-                    <p class="company">
-                        Configurable Maze Generator · Python, DFS, Prim, BFS, CLI
-                    </p>
-
-                    <ul class="achievement-list">
-                        <li>
-                            Architected a configurable maze generator and BFS
-                            pathfinding tool using Python.
-                        </li>
-
-                        <li>
-                            Implemented compact bitmask representations for
-                            memory-efficient cell wall tracking.
-                        </li>
-                    </ul>
-                </div>
+            <article class="project-panel" role="tabpanel" id="panel-2" aria-labelledby="tab-2">
+                <h3>Codexion</h3>
+                <p class="company">Multithreaded Resource Simulation · C, POSIX Threads, Mutexes, Priority Queue</p>
+                <ul class="achievement-list">
+                    <li>Built a multithreaded C simulation where coder threads compete for shared resources; mutexes protect shared state and each coder takes both required resources together to <strong>prevent deadlock</strong>.</li>
+                    <li>Implemented FIFO and Earliest Deadline First (EDF) scheduling with a custom min-heap priority queue, and tested with AddressSanitizer and ThreadSanitizer.</li>
+                </ul>
+                <a class="repo-link" href="https://github.com/ericachinlk/42-codexion" target="_blank" rel="noopener">View on GitHub</a>
             </article>
 
-            <article class="project-item">
-                <div class="project-type">C</div>
-
-                <div>
-                    <h3>push_swap</h3>
-
-                    <p class="company">
-                        High-Efficiency Sorting Engine · C, Circular Doubly Linked List
-                    </p>
-
-                    <ul class="achievement-list">
-                        <li>
-                            Developed a greedy sorting algorithm in C utilizing
-                            dual stacks and cost selection logic.
-                        </li>
-
-                        <li>
-                            Engineered custom circular doubly linked lists to optimize
-                            500-element cases to <strong>~5,032 operations</strong>.
-                        </li>
-                    </ul>
-                </div>
+            <article class="project-panel" role="tabpanel" id="panel-3" aria-labelledby="tab-3">
+                <h3>A-Maze-ing</h3>
+                <p class="company">Configurable Maze Generator (team project) · Python, DFS, Prim, BFS, CLI</p>
+                <ul class="achievement-list">
+                    <li>Built the maze generation engine, BFS pathfinding and package structure, working with a teammate who handled terminal display.</li>
+                    <li>Generates perfect and non-perfect mazes with DFS and Prim's algorithm, storing each cell's walls in a compact 4-bit bitmask.</li>
+                </ul>
+                <a class="repo-link" href="https://github.com/ericachinlk/42-a-maze-ing" target="_blank" rel="noopener">View on GitHub</a>
             </article>
-
         </div>
 
         <!-- TECHNICAL SKILLS -->
@@ -145,6 +107,8 @@
                     <div class="skill-list">
                         <span>Python</span>
                         <span>C</span>
+                        <span>JavaScript (basic)</span>
+                        <span>HTML / CSS (basic)</span>
                         <span>Linux</span>
                         <span>Git</span>
                         <span>Make</span>
@@ -167,16 +131,16 @@
                 </div>
 
                 <div class="skill-group">
-                    <h3>Algorithms &amp; Data Structures</h3>
+                    <h3>Algorithms &amp; Systems</h3>
 
                     <div class="skill-list">
                         <span>DFS</span>
                         <span>BFS</span>
-                        <span>Dijkstra</span>
                         <span>Prim</span>
-                        <span>Graph Search</span>
                         <span>Priority Queues</span>
-                        <span>Linked Lists</span>
+                        <span>POSIX Threads</span>
+                        <span>Mutexes</span>
+                        <span>Multithreading</span>
                     </div>
                 </div>
 
@@ -206,16 +170,29 @@
                     <p class="company">AirAsia MOVE</p>
 
                     <p class="experience-summary">
-                        Leveraged customer analytics and product positioning to optimize
-                        regional growth strategies, delivering 90%+ daily GBV uplift and
-                        70%+ booking growth.
+                        Used user-behaviour and campaign data to support growth for the
+                        Hotels and Shop products across the region.
                     </p>
 
                     <ul class="achievement-list">
                         <li>
-                            Coordinated cross-functional campaigns reaching
-                            <strong>17M+ weekly active users</strong> while managing
-                            multi-channel influencer performance.
+                            Supported Hotels campaigns that delivered a
+                            <strong>90%+ uplift in daily gross booking value (GBV)</strong> and
+                            <strong>70%+ booking growth</strong> compared with the previous campaign.
+                        </li>
+
+                        <li>
+                            Contributed to a platform campaign that
+                            <strong>reached 17M+ users in one week</strong>.
+                        </li>
+
+                        <li>
+                            Achieved 2000%+ ROAS on a Shop influencer campaign on Xiaohongshu, and
+                            ran a Thailand influencer programme with 210 creators reaching 350K+ users.
+                        </li>
+
+                        <li>
+                            Worked with CRM and content teams to improve multi-channel creatives.
                         </li>
                     </ul>
                 </div>
@@ -230,10 +207,17 @@
                     <p class="company">Inculab</p>
 
                     <p class="experience-summary">
-                        Analyzed audience behavior and channel performance data,
-                        driving a <strong>116% increase in enquiry rate</strong> and
-                        <strong>259% higher link click-through rate</strong>.
+                        Analysed audience engagement and conversion data, increasing
+                        <strong>enquiry rate by 116% in six months</strong> and
+                        <strong>link clicks by 259% in three months</strong>.
                     </p>
+
+                    <ul class="achievement-list">
+                        <li>
+                            Led the Taobao Maker Festival 2021 campaign, building a chatbot quiz
+                            for Alibaba across five markets.
+                        </li>
+                    </ul>
                 </div>
             </article>
 
@@ -241,23 +225,48 @@
                 <div class="experience-date">2013 — 2020</div>
 
                 <div>
-                    <h3>Prior Professional Experience</h3>
+                    <h3>Earlier Career</h3>
 
                     <p class="company">Publishing, Media &amp; Digital Content</p>
 
                     <ul class="achievement-list">
                         <li>
                             <strong>Joey Yap Research Group (2017–2020):</strong>
-                            Project Lead, Content Development — Managed cross-functional
-                            digital/print publishing projects and administered WordPress
-                            membership platforms.
+                            Project Lead, Content Development. Led book, infographic, workbook
+                            and digital content projects and maintained a WordPress membership website.
                         </li>
 
                         <li>
                             <strong>Social Video Lab &amp; Oriental Daily (2013–2017):</strong>
-                            Senior Media Specialist / Senior World News Writer — Produced
-                            data-backed digital content, analyzed international news,
-                            and managed publication workflows.
+                            Senior Media and Content Specialist; Senior World News Writer.
+                            Developed social campaigns and researched, translated and optimised
+                            world news content.
+                        </li>
+
+                        <li>
+                            <strong>Freelance author (2013–2021):</strong>
+                            Published nine Chinese novels and two English short stories.
+                        </li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="experience-item">
+                <div class="experience-date"></div>
+
+                <div>
+                    <h3>Education &amp; Training</h3>
+
+                    <ul class="achievement-list">
+                        <li>
+                            <strong>42 Kuala Lumpur (2025–present):</strong>
+                            Software engineering programme covering C, Python, algorithms
+                            and data structures.
+                        </li>
+
+                        <li>
+                            <strong>Universiti Tunku Abdul Rahman, UTAR (2010):</strong>
+                            Bachelor of Communications (Hons), Journalism.
                         </li>
                     </ul>
                 </div>
@@ -266,58 +275,9 @@
         </div>
     </section>
 
-    <!-- EDUCATION -->
-    <section id="education" class="education">
-        <div class="section-title">
-            <p class="small-title">03 / EDUCATION &amp; TRAINING</p>
-
-            <h2>
-                What I<br>
-                studied.
-            </h2>
-        </div>
-
-        <div class="education-list">
-
-            <article class="education-item">
-                <div class="experience-date">2025 — Present</div>
-
-                <div>
-                    <h3>42KL</h3>
-
-                    <p class="company">Core Software Engineering Programme</p>
-
-                    <p class="education-description">
-                        Intensive, peer-to-peer, project-based computer science curriculum
-                        covering advanced C, Python, algorithms, data structures, and Unix
-                        fundamentals. Piscine completed April–May 2025.
-                    </p>
-                </div>
-            </article>
-
-            <article class="education-item">
-                <div class="experience-date">2010</div>
-
-                <div>
-                    <h3>Universiti Tunku Abdul Rahman (UTAR)</h3>
-
-                    <p class="company">
-                        B.A. (Hons) Communications, Journalism
-                    </p>
-
-                    <p class="education-description">
-                        First Class Honours (CGPA: 3.59) · Book Prize Winner (2010) ·
-                        Dean’s List (2008–2009)
-                    </p>
-                </div>
-            </article>
-
-        </div>
-    </section>
-
     <!-- CONTACT -->
     <section id="contact" class="contact">
-        <p class="small-title">04 / CONTACT</p>
+        <p class="small-title">03 / CONTACT</p>
 
         <h2>
             Let's<br>
@@ -325,8 +285,7 @@
         </h2>
 
         <p>
-            If you would like to work with me,
-            feel free to get in touch.
+            Open to software engineering opportunities.
         </p>
 
         <div class="contact-links">
@@ -335,6 +294,7 @@
             <a
                 href="https://www.linkedin.com/in/ericachinleekam/"
                 target="_blank"
+                rel="noopener"
             >
                 LinkedIn
             </a>
@@ -342,6 +302,7 @@
             <a
                 href="https://github.com/ericachinlk"
                 target="_blank"
+                rel="noopener"
             >
                 GitHub
             </a>
@@ -350,5 +311,6 @@
         <p class="copyright">© 2026 Erica Chin</p>
     </section>
 
+    <script src="script.js"></script>
 </body>
 </html>
