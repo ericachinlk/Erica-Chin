@@ -101,6 +101,23 @@ section {
     color: #555;
 }
 
+.btn {
+    display: inline-block;
+    margin-top: 28px;
+    padding: 12px 24px;
+    border: 1px solid #111;
+    border-radius: 50px;
+    color: #111;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.btn:hover {
+    background: #111;
+    color: #FFFAFA;
+}
+
 .profile-photo {
     width: 100%;
     max-width: 500px;
@@ -130,32 +147,14 @@ section {
     margin-bottom: 120px;
 }
 
-.project-list,
 .experience-list {
     max-width: 1100px;
     margin-left: auto;
 }
 
-
-/* PROJECTS */
-
-.project-item {
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 50px;
-    padding: 50px 0;
-    border-top: 1px solid #444;
-}
-
-.project-type {
-    color: #999;
-    font-size: 14px;
-    letter-spacing: 1px;
-}
-
 .project-item h3,
-.experience-item h3,
-.education-item h3 {
+.project-panel h3,
+.experience-item h3 {
     font-size: 32px;
     font-weight: 400;
     margin-bottom: 5px;
@@ -166,8 +165,7 @@ section {
     margin-bottom: 20px;
 }
 
-.experience-summary,
-.education-description {
+.experience-summary {
     max-width: 700px;
     color: #ccc;
     font-size: 17px;
@@ -196,6 +194,87 @@ section {
 .achievement-list strong {
     color: white;
     font-weight: 500;
+}
+
+
+/* PROJECT VIEWER */
+
+.project-viewer {
+    max-width: 1100px;
+    margin-left: auto;
+    border-top: 1px solid #444;
+    padding-top: 50px;
+}
+
+.project-tabs {
+    display: none;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tab-hint {
+    display: none;
+    margin-top: 16px;
+    font-size: 13px;
+    color: #777;
+}
+
+.project-viewer.ready .project-tabs {
+    display: flex;
+}
+
+.project-viewer.ready .tab-hint {
+    display: block;
+}
+
+.project-tabs button {
+    font: inherit;
+    font-size: 14px;
+    background: none;
+    color: #ccc;
+    border: 1px solid #555;
+    border-radius: 50px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.project-tabs button:hover {
+    border-color: white;
+    color: white;
+}
+
+.project-tabs button[aria-selected="true"] {
+    background: white;
+    color: #111;
+    border-color: white;
+}
+
+.project-tabs button:focus-visible,
+.repo-link:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 3px;
+}
+
+.project-panel {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.project-panel[hidden] {
+    display: none;
+}
+
+.repo-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: white;
+    font-size: 15px;
+    text-underline-offset: 4px;
+}
+
+.repo-link:hover {
+    opacity: 0.6;
 }
 
 
@@ -260,45 +339,6 @@ section {
 }
 
 
-/* EDUCATION */
-
-.education {
-    padding-top: 150px;
-    padding-bottom: 150px;
-    background: #FFFAFA;
-    color: #111;
-}
-
-.education .small-title {
-    color: #666;
-}
-
-.education-list {
-    max-width: 1100px;
-    margin-left: auto;
-}
-
-.education-item {
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 50px;
-    padding: 50px 0;
-    border-top: 1px solid #ddd;
-}
-
-.education-item h3 {
-    color: #111;
-}
-
-.education .company {
-    color: #666;
-}
-
-.education-description {
-    color: #555;
-}
-
-
 /* CONTACT */
 
 .contact {
@@ -353,6 +393,15 @@ section {
 }
 
 
+/* Hide keyboard hint on touch devices */
+
+@media (hover: none), (pointer: coarse) {
+    .tab-hint {
+        display: none !important;
+    }
+}
+
+
 /* MOBILE */
 
 @media (max-width: 700px) {
@@ -386,12 +435,16 @@ section {
         letter-spacing: -4px;
     }
 
+    .hero h2 {
+        margin-top: 30px;
+        font-size: 22px;
+    }
+
     .profile-photo {
         max-width: 100%;
     }
 
-    .experience,
-    .education {
+    .experience {
         padding-top: 100px;
         padding-bottom: 100px;
     }
@@ -401,16 +454,13 @@ section {
         letter-spacing: -3px;
     }
 
-    .project-item,
-    .experience-item,
-    .education-item {
+    .experience-item {
         grid-template-columns: 1fr;
         gap: 15px;
     }
 
-    .project-item h3,
-    .experience-item h3,
-    .education-item h3 {
+    .project-panel h3,
+    .experience-item h3 {
         font-size: 26px;
     }
 
